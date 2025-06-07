@@ -1,0 +1,1050 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif; /* Use Roboto as the main font */
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1117; /* Night black background for the whole page */
+    color: #ccc; /* Light grey text for better readability on dark background */
+    scroll-behavior: smooth;
+    padding-top: 60px; /* Add padding to body to prevent content from being hidden by fixed nav */
+}
+
+h1, h2, h3 {
+    font-family: 'Cairo', sans-serif; /* Use Cairo for headings */
+    color: #fff;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: transparent; /* Initially transparent background */
+    color: #fff; /* White text by default for hero section */
+    padding: 20px 0; /* Slightly more vertical padding */
+    z-index: 1000;
+    box-shadow: none; /* No shadow initially */
+    transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease; /* Smooth transition */
+}
+
+nav.scrolled {
+    background: rgba(30, 30, 30, 0.98); /* Darker, almost black semi-transparent background */
+    padding: 10px 0; /* Reduced padding when scrolled */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* More prominent shadow when scrolled */
+    color: #fff; /* Keep text white */
+}
+
+nav .container {
+    display: flex;
+    justify-content: center; /* Center the nav items */
+    align-items: center;
+}
+
+nav h1 a {
+    color: #fff; /* White color for name */
+    text-decoration: none;
+    font-size: 1.8em;
+    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    transition: color 0.3s ease;
+}
+
+nav h1 a:hover {
+    color: #4a90e2;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px; /* Adjust margin for centered layout */
+}
+
+nav ul li a {
+    color: rgba(255, 255, 255, 0.7); /* Lighter initial white color */
+    text-decoration: none;
+    font-size: 1.1em; /* Slightly larger font size for nav items */
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 5px;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+    display: inline-block; /* Needed for transform to work correctly */
+}
+
+nav ul li a:hover {
+    color: #fff; /* Brighter white on hover */
+    transform: translateY(-5px) scale(1.1);
+    text-shadow: 0 5px 15px rgba(74, 144, 226, 0.8);
+}
+
+/* Language Switcher */
+.language-switcher {
+    margin-left: 20px; /* Space from nav links */
+}
+
+.lang-button {
+    background-color: transparent; /* No background */
+    border: 1px solid #fff; /* White border */
+    color: #fff; /* White text */
+    padding: 5px 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    border-radius: 3px; /* Slightly rounded corners */
+    margin-left: 5px; /* Space between buttons */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 0.9em; /* Smaller font size */
+}
+
+.lang-button:hover {
+    background-color: #fff; /* White background on hover */
+    color: #333; /* Dark text on hover */
+}
+
+.lang-button.active {
+    background-color: #4a90e2; /* Active button background */
+    border-color: #4a90e2; /* Active button border */
+    color: #fff; /* Active button text */
+}
+
+/* Hero Section */
+header.hero {
+    background-color: transparent; /* Make hero transparent to see stars */
+    background-image: radial-gradient(ellipse 50% 35% at 50% 50%, rgba(66, 135, 245, 0.1), transparent);
+    color: #fff;
+    padding: 120px 0; /* More vertical padding */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh; /* Make it taller */
+    position: relative;
+    overflow: hidden;
+    z-index: 3; /* Lift hero content above background effects */
+    /* Animation is now controlled by a class */
+}
+
+header.hero.is-pulsing {
+    animation: pulseLight 8s infinite ease-in-out;
+}
+
+@keyframes pulseLight {
+    0% {
+        background-image: radial-gradient(ellipse 50% 35% at 50% 50%, rgba(66, 135, 245, 0.05), transparent);
+    }
+    50% {
+        background-image: radial-gradient(ellipse 50% 35% at 50% 50%, rgba(66, 135, 245, 0.2), transparent);
+    }
+    100% {
+        background-image: radial-gradient(ellipse 50% 35% at 50% 50%, rgba(66, 135, 245, 0.05), transparent);
+    }
+}
+
+/* Starfield Animation */
+@keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+
+#stars, #stars2, #stars3 {
+    position: fixed; /* Fixed position to cover the entire viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+}
+
+#stars {
+    background: transparent;
+    animation: twinkle 10s infinite;
+    /* Denser stars */
+    background-image: 
+        radial-gradient(1px 1px at 20% 20%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(1px 1px at 50% 70%, white, transparent),
+        radial-gradient(2px 2px at 90% 40%, white, transparent),
+        radial-gradient(1px 1px at 10% 85%, white, transparent),
+        radial-gradient(1px 1px at 5% 5%, white, transparent),
+        radial-gradient(1px 1px at 95% 95%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(2px 2px at 30% 30%, white, transparent),
+        radial-gradient(1px 1px at 70% 60%, white, transparent),
+        radial-gradient(1px 1px at 15% 65%, white, transparent),
+        radial-gradient(1px 1px at 85% 75%, white, transparent),
+        radial-gradient(2px 2px at 45% 15%, white, transparent),
+        radial-gradient(1px 1px at 65% 85%, white, transparent),
+        radial-gradient(1px 1px at 25% 45%, white, transparent);
+}
+
+#stars2 {
+    background: transparent;
+    animation: twinkle 15s infinite;
+    /* Denser different stars */
+    background-image: 
+        radial-gradient(1px 1px at 30% 50%, white, transparent),
+        radial-gradient(1px 1px at 70% 90%, white, transparent),
+        radial-gradient(2px 2px at 40% 30%, white, transparent),
+        radial-gradient(1px 1px at 5% 45%, white, transparent),
+        radial-gradient(2px 2px at 85% 65%, white, transparent),
+        radial-gradient(1px 1px at 15% 25%, white, transparent),
+        radial-gradient(1px 1px at 60% 5%, white, transparent),
+        radial-gradient(2px 2px at 45% 80%, white, transparent),
+        radial-gradient(1px 1px at 25% 70%, white, transparent),
+        radial-gradient(2px 2px at 75% 20%, white, transparent),
+        radial-gradient(1px 1px at 10% 10%, white, transparent),
+        radial-gradient(1px 1px at 90% 85%, white, transparent);
+}
+
+#stars3 {
+    background: transparent;
+    animation: twinkle 20s infinite;
+    /* Denser more different stars */
+    background-image: 
+        radial-gradient(1px 1px at 60% 60%, white, transparent),
+        radial-gradient(2px 2px at 15% 75%, white, transparent),
+        radial-gradient(1px 1px at 85% 25%, white, transparent),
+        radial-gradient(1px 1px at 35% 15%, white, transparent),
+        radial-gradient(2px 2px at 5% 90%, white, transparent),
+        radial-gradient(1px 1px at 95% 55%, white, transparent),
+        radial-gradient(2px 2px at 45% 55%, white, transparent),
+        radial-gradient(1px 1px at 75% 5%, white, transparent),
+        radial-gradient(1px 1px at 25% 85%, white, transparent);
+}
+
+/* Moon */
+#moon {
+    position: fixed;
+    top: 50px;
+    right: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    box-shadow: 
+        0 0 10px #fff,
+        0 0 20px #fff,
+        0 0 30px #fff,
+        0 0 40px #f0e68c, /* A bit of yellow glow */
+        0 0 70px #f0e68c,
+        0 0 80px #f0e68c,
+        0 0 100px #f0e68c;
+    z-index: 1; /* Same level as clouds */
+}
+
+/* Clouds Animation */
+#clouds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 2; /* Clouds should be in front of the moon */
+    opacity: 0.1;
+}
+
+#clouds::before, #clouds::after {
+    content: '';
+    position: absolute;
+    background: #fff;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    top: -100px;
+    left: 100px;
+    box-shadow: 
+        100px 0 0 30px #fff,
+        -90px 20px 0 50px #fff;
+    animation: moveClouds 200s linear infinite;
+    z-index: 2; /* Ensure clouds are on top */
+}
+
+#clouds::after {
+    top: 10%;
+    left: auto;
+    right: 5%;
+    width: 150px;
+    height: 150px;
+    animation: moveClouds 150s linear infinite;
+    z-index: 2; /* Ensure clouds are on top */
+}
+
+@keyframes moveClouds {
+    from {
+        transform: translateX(-250px);
+    }
+    to {
+        transform: translateX(2200px);
+    }
+}
+
+header.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+header.hero h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 4em; /* Even larger font size */
+    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); /* More prominent text shadow */
+}
+
+header.hero p {
+    margin-bottom: 30px;
+    font-size: 1.5em; /* Larger font size for description */
+    font-family: 'Roboto', sans-serif;
+    opacity: 1; /* Make text visible */
+    transform: translateY(0); /* Reset transform */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation */
+}
+
+header.hero .cta-button {
+    display: inline-block;
+    background: #fff; /* White background */
+    color: #1a2a6c; /* Dark blue text color */
+    padding: 18px 35px; /* More padding */
+    text-decoration: none;
+    border-radius: 50px; /* Pill shape */
+    font-size: 1.2em; /* Larger font size */
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+}
+
+header.hero .cta-button:hover {
+    background-color: #1a2a6c; /* Dark blue background on hover */
+    color: #fff; /* White text on hover */
+    transform: translateY(-5px); /* More pronounced lift */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+}
+
+.hero-image {
+    display: block;
+    width: 200px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    border-radius: 50%; /* Makes the image round */
+    margin: 20px auto 0; /* Centers the image below the text and adds space */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 4px solid #fff; /* Optional: Adds a white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+}
+
+.hero-image:hover {
+    transform: scale(1.1); /* Make the image slightly larger */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.5), 0 4px 8px rgba(0, 0, 0, 0.2); /* White shadow below and existing subtle shadow */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Section Styles */
+section {
+    padding: 40px 20px;
+    margin: 30px auto;
+    max-width: 960px;
+    background: transparent; /* Make section background transparent */
+    border-radius: 10px;
+    box-shadow: none; /* Remove shadow as it doesn't fit the new design */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation transition */
+    position: relative; /* Ensure sections create a stacking context */
+    z-index: 3; /* Lift all sections above background effects */
+}
+
+section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h2 {
+    color: #4a90e2;
+    border-bottom: 2px solid #4a90e2;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Cairo', sans-serif; /* Use Cairo */
+}
+
+/* About Section */
+#about .about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+#about .about-text {
+    flex: 2;
+}
+
+#about .about-image {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Ensure container has height */
+}
+
+/* Skill Visualization Animation */
+.skill-visualization {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.core-sphere {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #fff, 0 0 40px #4a90e2;
+    position: absolute;
+    animation: pulseCore 4s infinite ease-in-out;
+}
+
+@keyframes pulseCore {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px #fff, 0 0 40px #4a90e2;
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px #fff, 0 0 60px #4a90e2;
+    }
+}
+
+.orbit {
+    position: absolute;
+    width: calc(var(--orbit-radius) * 2);
+    height: calc(var(--orbit-radius) * 2);
+    border: 1px solid rgba(74, 144, 226, 0.2);
+    border-radius: 50%;
+    animation: spin var(--animation-duration) linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.skill-sphere {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: -10px; /* Center of the sphere on the orbit line */
+    left: calc(50% - 10px);
+}
+
+#frontend-sphere {
+    background: #4a90e2;
+    box-shadow: 0 0 15px #4a90e2;
+}
+
+#flutter-sphere {
+    background: #027DFD;
+    box-shadow: 0 0 15px #027DFD;
+}
+
+#ai-sphere {
+    background: #8A2BE2; /* BlueViolet for AI */
+    box-shadow: 0 0 15px #8A2BE2;
+}
+
+#about p {
+     font-family: 'Roboto', sans-serif; /* Use Roboto */
+     color: #ccc; /* Make text light */
+     opacity: 0; /* Start hidden for animation */
+     transform: translateY(20px); /* Start slightly lower */
+     transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Animation transition */
+     line-height: 1.8;
+     margin-bottom: 15px;
+}
+
+section.is-visible#about p:nth-of-type(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+section.is-visible#about p:nth-of-type(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+section.is-visible#about p:nth-of-type(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.7s;
+}
+
+/* Skills Section */
+#skills .skills-list {
+    display: grid; /* Use grid for skills layout */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between skills items */
+}
+
+#skills .skill-item {
+    background: rgba(22, 27, 34, 0.8); /* Dark, semi-transparent card background */
+    padding: 25px; /* Slightly more padding */
+    border: 1px solid rgba(74, 144, 226, 0.2); /* Subtle border to define the card */
+    border-radius: 8px; /* More rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Adjusted shadow for dark theme */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0; /* Start hidden for inner animation - JS handles visibility */
+    transform: translateY(20px); /* Start slightly lower - JS handles transform */
+    position: relative; /* Needed for pseudo-element positioning */
+    overflow: hidden; /* Hide overflowing pseudo-element */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack children vertically */
+    /* Transition handled by JS */
+}
+
+#skills .skill-item.is-in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#skills .skill-item::before {
+    font-family: "Font Awesome 6 Brands"; /* Ensure the correct font family */
+    position: absolute;
+    bottom: -40px;
+    right: -30px;
+    font-size: 150px;
+    opacity: 0.04;
+    color: #fff;
+    transition: opacity 0.3s ease-in-out;
+    user-select: none; /* Make it non-selectable */
+    z-index: -1;
+}
+
+/* Specific content for some icons that are not in Brands */
+#skills .flutter-skill::before,
+#skills .dart-skill::before,
+#skills .ml-skill::before,
+#skills .ai-skill::before,
+#skills .vibe-skill::before,
+#skills .rn-skill::before,
+#skills .firebase-skill::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900; /* Solid style */
+}
+
+#skills .skill-item.is-in-view:hover {
+    transform: translateY(-8px); /* More pronounced hover effect */
+}
+
+#skills .skill-item:hover .skill-header i {
+    transform: scale(1.1);
+    /* text-shadow will be skill-specific */
+}
+
+/* --- Individual Skill Colors & Watermarks --- */
+
+/* HTML5 */
+.html-skill .fa-html5 { color: #E34F26; }
+#skills .html-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(227, 79, 38, 0.3); }
+.html-skill:hover .fa-html5 { text-shadow: 0 0 15px #E34F26; }
+.html-skill::before { content: '\f13b'; }
+
+/* CSS3 */
+.css-skill .fa-css3-alt { color: #1572B6; }
+#skills .css-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(21, 114, 182, 0.3); }
+.css-skill:hover .fa-css3-alt { text-shadow: 0 0 15px #1572B6; }
+.css-skill::before { content: '\f38b'; }
+
+/* JavaScript */
+.js-skill .fa-js { color: #F7DF1E; }
+#skills .js-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(247, 223, 30, 0.3); }
+.js-skill:hover .fa-js { text-shadow: 0 0 15px #F7DF1E; }
+.js-skill::before { content: '\f3b9'; }
+
+/* Python */
+.python-skill .fa-python { color: #3776AB; }
+#skills .python-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(55, 118, 171, 0.3); }
+.python-skill:hover .fa-python { text-shadow: 0 0 15px #3776AB; }
+.python-skill::before { content: '\f3e2'; }
+
+/* Flutter */
+.flutter-skill .fa-mobile-alt { color: #027DFD; }
+#skills .flutter-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(2, 125, 253, 0.3); }
+.flutter-skill:hover .fa-mobile-alt { text-shadow: 0 0 15px #027DFD; }
+.flutter-skill::before { content: '\f3cd'; }
+
+/* Dart */
+.dart-skill .fa-code { color: #0175C2; }
+#skills .dart-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(1, 117, 194, 0.3); }
+.dart-skill:hover .fa-code { text-shadow: 0 0 15px #0175C2; }
+.dart-skill::before { content: '\f121'; }
+
+/* Machine Learning */
+.ml-skill .fa-robot { color: #A445ED; }
+#skills .ml-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(164, 69, 237, 0.3); }
+.ml-skill:hover .fa-robot { text-shadow: 0 0 15px #A445ED; }
+.ml-skill::before { content: '\f544'; }
+
+/* AI & Data Science */
+.ai-skill .fa-chart-bar { color: #4CAF50; }
+#skills .ai-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(76, 175, 80, 0.3); }
+.ai-skill:hover .fa-chart-bar { text-shadow: 0 0 15px #4CAF50; }
+.ai-skill::before { content: '\f080'; }
+
+/* UI/UX (Figma) */
+.uiux-skill .fa-figma { color: #A259FF; }
+#skills .uiux-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(162, 89, 255, 0.3); }
+.uiux-skill:hover .fa-figma { text-shadow: 0 0 15px #A259FF; }
+.uiux-skill::before { content: '\f799'; font-family: "Font Awesome 6 Brands"; }
+
+/* Vibe Coding - Now with an image */
+.vibe-skill .skill-icon-img { 
+    width: 2.4em; /* Match icon size */
+    height: 2.4em; /* Match icon size */
+    margin-right: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+#skills .vibe-skill.is-in-view:hover { 
+    /* Use a neutral blue glow to match the theme */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(74, 144, 226, 0.3); 
+}
+.vibe-skill:hover .skill-icon-img {
+    transform: scale(1.1);
+}
+/* Remove the old ::before watermark for vibe-skill */
+.vibe-skill::before { content: none; }
+
+/* React & React Native */
+.rn-skill .fa-mobile, .react-skill .fa-react { color: #61DAFB; }
+#skills .rn-skill.is-in-view:hover, #skills .react-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(97, 218, 251, 0.3); }
+.rn-skill:hover .fa-mobile, .react-skill:hover .fa-react { text-shadow: 0 0 15px #61DAFB; }
+.rn-skill::before { content: '\f3ce'; }
+.react-skill::before { content: '\f41b'; }
+
+/* Firebase */
+.firebase-skill .fa-database { color: #FFCA28; }
+#skills .firebase-skill.is-in-view:hover { box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 202, 40, 0.3); }
+.firebase-skill:hover .fa-database { text-shadow: 0 0 15px #FFCA28; }
+.firebase-skill::before { content: '\f1c0'; }
+
+#skills .skill-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px; /* More space below header */
+    opacity: 0; /* Handled by JS */
+    transform: translateY(10px); /* Handled by JS */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Ensure transition */
+}
+
+#skills .skill-header i {
+    font-size: 2.4em; /* Slightly larger icons */
+    margin-right: 15px; /* More space after icon */
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    /* Color is now handled by individual skill classes */
+}
+
+#skills .skill-header h3 {
+    margin: 0;
+    color: #fff; /* White text for better contrast on dark card */
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.3em; /* Slightly larger font size */
+    white-space: nowrap; /* Prevent skill titles from wrapping */
+    transform: translateY(10px); /* Handled by JS */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Ensure transition */
+}
+
+#skills .skill-item p {
+    margin-bottom: 20px; /* More space below paragraph */
+    font-size: 1em; /* Slightly larger font size */
+    flex-grow: 1; /* Allow paragraph to grow and push progress bar down */
+     opacity: 0; /* Handled by JS */
+    transform: translateY(10px); /* Handled by JS */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Ensure transition */
+    color: #ccc; /* Light grey for description on dark card */
+    line-height: 1.6; /* Improved readability */
+}
+
+.progress-bar-container {
+    background-color: rgba(0, 0, 0, 0.2); /* Darker container for the bar */
+    border-radius: 6px; /* Slightly more rounded */
+    overflow: hidden;
+    height: 14px; /* Slightly taller progress bar */
+    margin-top: 10px;
+     opacity: 0; /* Handled by JS */
+    transform: translateY(10px); /* Handled by JS */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Ensure transition */
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, #4a90e2, #a8c0ff); /* Glowing gradient */
+    height: 100%;
+    border-radius: 6px; /* Match container radius */
+    width: 0; /* Initial state for animation */
+    transition: width 1s ease-in-out; /* Smooth animation */
+    box-shadow: 0 0 5px #4a90e2, 0 0 10px #4a90e2;
+}
+
+/* Projects Section */
+#projects .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+#projects .project-item {
+    background: rgba(22, 27, 34, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+#projects .project-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(74, 144, 226, 0.2);
+}
+
+/* New Phone Gallery Styles */
+.phone-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 10px;
+    background: rgba(0,0,0,0.2);
+}
+
+/* Phone Mockup Styles */
+.phone-mockup {
+    position: relative;
+    padding: 10px;
+    background: #111;
+    border-radius: 20px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.5);
+    width: 110px;
+    height: 220px;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0s 0.2s;
+    z-index: 1;
+}
+
+.phone-gallery:hover .phone-mockup {
+    transform: translateX(-15%);
+}
+
+.phone-gallery .phone-mockup:hover {
+    transform: scale(1.5) !important;
+    z-index: 10;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), z-index 0s 0s;
+}
+
+.phone-gallery .phone-mockup:nth-child(2) {
+    transform: translateY(-10px);
+}
+
+.phone-gallery:hover .phone-mockup:nth-child(2) {
+    transform: translateX(0) translateY(-10px);
+}
+
+.phone-gallery .phone-mockup:nth-child(3):hover {
+    transform: scale(1.5) translateX(-5%) !important;
+}
+
+.phone-gallery .phone-mockup:nth-child(1):hover {
+    transform: scale(1.5) translateX(5%) !important;
+}
+
+.phone-screen-container {
+    background: #000;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px; /* Adjusted inner radius */
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 5px rgba(255,255,255,0.1);
+}
+
+#projects .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#projects .project-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+}
+
+#projects .project-info h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #fff; /* White text for project title */
+     font-family: 'Cairo', sans-serif; /* Use Cairo */
+}
+
+#projects .project-info p {
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow description to take available space */
+    font-size: 0.95em;
+    color: #ccc; /* Light grey for project description */
+}
+
+#projects .project-link {
+    display: inline-block;
+    background: #4a90e2;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+    align-self: flex-start; /* Align link to the start */
+}
+
+#projects .project-link:hover {
+    background-color: #357ABD; /* Darker shade on hover */
+}
+
+/* AI Project Card Styles - Simplified */
+.ai-project {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 30px; /* Add padding to top */
+    background: linear-gradient(145deg, rgba(22, 27, 34, 0.9), rgba(40, 48, 59, 0.9));
+    border: 1px solid rgba(74, 144, 226, 0.2);
+}
+
+.ai-project .ai-project-header {
+    font-size: 4em;
+    color: #4a90e2;
+    animation: pulseIcon 3s infinite ease-in-out;
+    margin: 0 auto 20px auto; /* Center and provide bottom margin */
+}
+
+@keyframes pulseIcon {
+    0%, 100% {
+        transform: scale(1);
+        text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
+    }
+    50% {
+        transform: scale(1.1);
+        text-shadow: 0 0 20px rgba(74, 144, 226, 0.8);
+    }
+}
+
+.ai-project .project-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* This will push button to bottom */
+}
+
+.ai-project .tech-icons {
+    justify-content: center;
+    display: flex;
+}
+
+.ai-project .project-link {
+    align-self: center; /* Center the button */
+}
+
+/* Contact Section */
+#contact p {
+    text-align: center;
+    font-size: 1.1em;
+     font-family: 'Roboto', sans-serif; /* Use Roboto */
+     color: #ccc; /* Light text */
+}
+
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 2em; /* Larger icons */
+    color: #ccc; /* Light icon color */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #4a90e2; /* Change color on hover */
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: #333;
+    color: #fff;
+    margin-top: 40px;
+    font-size: 0.9em;
+    font-family: 'Roboto', sans-serif; /* Use Roboto */
+}
+
+/* Scroll to Top Button */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    bottom: 20px; /* 20px from the bottom */
+    right: 20px; /* 20px from the right */
+    z-index: 999; /* Make sure it's on top */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #4a90e2; /* Blue background */
+    color: white; /* White text */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 10px 15px; /* Some padding */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1.5em; /* Icon size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+    transition: background-color 0.3s ease, opacity 0.5s ease, visibility 0.5s ease; /* Smooth transitions */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #357ABD; /* Darker shade on hover */
+}
+
+/* RTL adjustments for Arabic */
+/* Removed RTL adjustments */
+
+/* Debugging styles for English skill descriptions */
+/* Removed debugging styles */
+
+/* Language specific display rules controlled by body class */
+body.en .lang.ar {
+    display: none !important; /* Hide Arabic elements when English is active */
+}
+
+body.ar .lang.en {
+    display: none !important; /* Hide English elements when Arabic is active */
+}
+
+/* Ensure elements for the active language are displayed according to their natural type */
+/* The JS will add the correct display property (block, inline-block, etc.) when showing */
+/* These CSS rules only handle hiding the inactive language */
+
+/* Debugging styles for English skill descriptions */
+body.en #skills .skill-item p.lang.en {
+    background-color: yellow !important; /* Highlight English paragraphs */
+    border: 1px dashed red !important; /* Add border for visibility */
+    color: black !important; /* Make text black to ensure visibility */
+}
+
+/* Styles for Personal Strengths / Soft Skills Sub-section */
+#personal-strengths {
+    margin-top: 60px; /* Add more space above this section */
+    padding-top: 40px; /* Add padding inside */
+    border-top: 1px solid rgba(74, 144, 226, 0.1); /* Add a subtle blue line to separate */
+}
+
+#personal-strengths h2 {
+    text-align: center; /* Center the heading */
+    color: #4a90e2; /* Use the theme color */
+    margin-bottom: 20px; /* Space below the heading */
+    border-bottom: none; /* Remove border as it's now on the container top */
+    padding-bottom: 0; /* Remove padding as border is removed */
+}
+
+#personal-strengths p {
+    text-align: center; /* Center the introductory paragraph */
+    font-size: 1em; /* Consistent font size */
+    color: #ccc; /* Consistent text color */
+    margin-bottom: 20px; /* Space below the paragraph */
+}
+
+#personal-strengths ul {
+    list-style: none; /* Remove default list bullets */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox for list items */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center list items */
+    gap: 15px; /* Space between list items */
+}
+
+#personal-strengths li {
+    background: rgba(30, 36, 44, 0.9); /* Slightly different dark card background */
+    padding: 12px 25px; /* Adjust padding for pill shape */
+    border: 1px solid rgba(74, 144, 226, 0.2); /* Use theme color for border */
+    border-radius: 50px; /* Fully rounded corners for pill shape */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    font-family: 'Roboto', sans-serif;
+    color: #ccc;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    margin: 0; /* Remove margin, use gap instead */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.5s ease-out, transform 0.5s ease-out;
+    opacity: 0; /* Hidden for animation */
+    transform: translateY(20px);
+     /* Start lower for animation */
+}
+
+#personal-strengths li.is-in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#personal-strengths li.is-in-view:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: rgba(74, 144, 226, 0.1);
+    box-shadow: 0 6px 15px rgba(74, 144, 226, 0.2);
+}
+
+#personal-strengths li i {
+    font-size: 1.2em; /* Adjust icon size to fit pill */
+    color: #4a90e2; /* Theme color for icons */
+    margin-right: 12px; /* Space between icon and text */
+    transition: transform 0.3s ease;
+}
+
+#personal-strengths li:hover i {
+    transform: scale(1.1);
+}
+
+#personal-strengths li strong {
+    color: #fff; /* Ensure bold text color is white */
+    margin: 0 4px; /* Add small left and right margin for spacing */
+}

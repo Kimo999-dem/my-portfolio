@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kareem Samir - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Google Fonts here later -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Starfield divs moved here -->
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div id="clouds"></div>
+    <div id="moon"></div>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+             <!-- Language Switcher Removed -->
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <img src="assets/my_pic.jpg" alt="Your Name" class="hero-image">
+            <h1>Kareem Samir Ragab Mohamed</h1>
+            <p>Front-End Developer &amp; AI Specialist &amp; UI/UX Designer &amp; Flutter Developer &amp; Vibe Coder</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a passionate developer and AI specialist with an endless curiosity for building intelligent and seamless digital experiences. My journey began in the world of front-end development, where I honed my skills in creating engaging user interfaces with HTML, CSS, and JavaScript.
+                    </p>
+                    <p>
+                        What truly defines me is my passion for bridging the gap between captivating design and the power of Artificial Intelligence. I enjoy transforming complex ideas into innovative tech solutions, leveraging my expertise in Python, Machine Learning, and Data Science. I believe the future lies in applications that are not just beautiful, but also smart.
+                    </p>
+                    <p>
+                        As a natural self-learner, I'm always seeking the next challenge and enjoy stepping out of my comfort zone to explore new technologies like Flutter and Firebase. My goal is to keep growing and contribute to building impactful and innovative products.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div class="skill-visualization">
+                        <div class="core-sphere"></div>
+                        <div class="orbit" style="--orbit-radius: 80px; --animation-duration: 10s;">
+                            <div class="skill-sphere" id="frontend-sphere"></div>
+                        </div>
+                        <div class="orbit" style="--orbit-radius: 120px; --animation-duration: 15s;">
+                            <div class="skill-sphere" id="flutter-sphere"></div>
+                        </div>
+                        <div class="orbit" style="--orbit-radius: 160px; --animation-duration: 20s;">
+                            <div class="skill-sphere" id="ai-sphere"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-list">
+                <!-- Flutter -->
+                <div class="skill-item flutter-skill">
+                    <div class="skill-header">
+                         <i class="fas fa-mobile-alt"></i>
+                         <h3>Flutter</h3>
+                    </div>
+                    <p>Developing mobile, web, and desktop applications using Flutter and Dart.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <!-- Dart -->
+                 <div class="skill-item dart-skill">
+                    <div class="skill-header">
+                         <i class="fas fa-code"></i>
+                         <h3>Dart</h3>
+                    </div>
+                    <p>The primary programming language used in Flutter.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 88%;"></div>
+                    </div>
+                </div>
+                <!-- HTML -->
+                 <div class="skill-item html-skill">
+                    <div class="skill-header">
+                         <i class="fab fa-html5"></i>
+                         <h3>HTML</h3>
+                    </div>
+                    <p>Structuring web pages.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <!-- CSS -->
+                 <div class="skill-item css-skill">
+                    <div class="skill-header">
+                         <i class="fab fa-css3-alt"></i>
+                         <h3>CSS</h3>
+                    </div>
+                    <p>Styling and designing web pages.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 92%;"></div>
+                    </div>
+                </div>
+                <!-- UI/UX (Figma) -->
+                <div class="skill-item uiux-skill">
+                   <div class="skill-header">
+                        <i class="fab fa-figma"></i>
+                        <h3>UI/UX (Figma)</h3>
+                   </div>
+                   <p>Designing modern and user-friendly interfaces with Figma.</p>
+                    <div class="progress-bar-container">
+                       <div class="progress-bar" style="width: 85%;"></div>
+                   </div>
+               </div>
+                <!-- JavaScript -->
+                 <div class="skill-item js-skill">
+                    <div class="skill-header">
+                         <i class="fab fa-js"></i>
+                         <h3>JavaScript</h3>
+                    </div>
+                    <p>Adding interactivity and behavior to web pages.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 85%;"></div>
+                    </div>
+                </div>
+                 <!-- Python -->
+                 <div class="skill-item python-skill">
+                    <div class="skill-header">
+                         <i class="fab fa-python"></i>
+                         <h3>Python</h3>
+                    </div>
+                    <p>Versatile programming language for web development, data analysis, and AI.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 90%;"></div>
+                    </div>
+                </div>
+                 <!-- Machine Learning -->
+                 <div class="skill-item ml-skill">
+                    <div class="skill-header">
+                         <i class="fas fa-robot"></i>
+                         <h3>Machine Learning</h3>
+                    </div>
+                    <p>Building and training machine learning models.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 80%;"></div>
+                    </div>
+                </div>
+                 <!-- AI & Data Science -->
+                 <div class="skill-item ai-skill">
+                    <div class="skill-header">
+                         <i class="fas fa-chart-bar"></i>
+                         <h3>AI & Data Science</h3>
+                    </div>
+                    <p>Analyzing data and applying artificial intelligence techniques.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 82%;"></div>
+                    </div>
+                </div>
+                <!-- Vibe Coding -->
+                 <div class="skill-item vibe-skill">
+                    <div class="skill-header">
+                         <img src="assets/Frame 1.png" alt="Vibe Coding" class="skill-icon-img">
+                         <h3>Vibe Coding</h3>
+                    </div>
+                    <p>Building and developing innovative applications by leveraging the power of Artificial Intelligence.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 99%;"></div>
+                    </div>
+                </div>
+                <!-- React Native -->
+                 <div class="skill-item rn-skill">
+                    <div class="skill-header">
+                         <i class="fas fa-mobile"></i>
+                         <h3>React Native (Beginner)</h3>
+                    </div>
+                    <p>Beginnings in mobile application development using React Native.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 40%;"></div>
+                    </div>
+                </div>
+                <!-- React -->
+                 <div class="skill-item react-skill">
+                    <div class="skill-header">
+                         <i class="fab fa-react"></i>
+                         <h3>React (Beginner)</h3>
+                    </div>
+                    <p>Beginnings in user interface development using React.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 45%;"></div>
+                    </div>
+                </div>
+                 <!-- Firebase -->
+                 <div class="skill-item firebase-skill">
+                    <div class="skill-header">
+                         <i class="fas fa-database"></i>
+                         <h3>Firebase</h3>
+                    </div>
+                    <p>Using Firebase services in Flutter projects.</p>
+                     <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <!-- Personal Strengths / Soft Skills -->
+    <section id="personal-strengths">
+        <div class="container">
+            <h2>Personal Strengths</h2>
+            <p>In addition to my technical abilities, I pride myself on:</p>
+            <ul>
+                <li><i class="fas fa-bolt"></i> Being a <strong> Fast Learner</strong> : Quickly grasping new concepts and technologies.</li>
+                <li><i class="fas fa-book-open"></i> Embracing <strong> Self-Learning</strong> : Constantly seeking out knowledge and skills independently.</li>
+                <li><i class="fas fa-shield-alt"></i> Showing <strong> Perseverance</strong> : Tackling challenges head-on and finding solutions.</li>
+                <li><i class="fas fa-brain"></i> Having a strong <strong> Willingness to Learn</strong> : Always open to acquiring new skills and adapting to different situations.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-list">
+                <!-- Project 1: OLX Clone -->
+                <div class="project-item">
+                    <div class="phone-gallery">
+                        <div class="phone-mockup">
+                            <div class="phone-screen-container">
+                                <img src="assets/olx1.jpg" alt="OLX Project Screenshot 1" class="project-image">
+                            </div>
+                        </div>
+                        <div class="phone-mockup">
+                            <div class="phone-screen-container">
+                                <img src="assets/olx2.jpg" alt="OLX Project Screenshot 2" class="project-image">
+                            </div>
+                        </div>
+                        <div class="phone-mockup">
+                            <div class="phone-screen-container">
+                                <img src="assets/olx3.jpg" alt="OLX Project Screenshot 3" class="project-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>OLX Application</h3>
+                        <p>A marketplace app to upload products and chat with customers securely, featuring persistent chat history and location sharing.</p>
+                        <div class="tech-icons">
+                            <i class="fas fa-mobile-alt" title="Flutter"></i>
+                            <i class="fas fa-database" title="Firebase"></i>
+                        </div>
+                        <a href="#" class="project-link disabled" onclick="return false;">Source Code Private</a>
+                    </div>
+                </div>
+                <!-- Project 2: Facebook Clone -->
+                <div class="project-item">
+                    <div class="phone-gallery">
+                        <div class="phone-mockup">
+                            <div class="phone-screen-container">
+                                <img src="assets/facbooky3.jpg" alt="Facebook Project Screenshot 1" class="project-image">
+                            </div>
+                        </div>
+                        <div class="phone-mockup">
+                            <div class="phone-screen-container">
+                                <img src="assets/facbooky1.jpg" alt="Facebook Project Screenshot 2" class="project-image">
+                            </div>
+                        </div>
+                        <div class="phone-mockup">
+                            <div class="phone-screen-container">
+                                <img src="assets/facbooky2.jpg" alt="Facebook Project Screenshot 3" class="project-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Facebook Application</h3>
+                        <p>An interactive platform similar to Facebook with chat functionality, user following, and a professional animation system.</p>
+                        <div class="tech-icons">
+                            <i class="fas fa-mobile-alt" title="Flutter"></i>
+                            <i class="fas fa-database" title="Firebase"></i>
+                        </div>
+                        <a href="#" class="project-link disabled" onclick="return false;">Source Code Private</a>
+                    </div>
+                </div>
+                <!-- Project 3: AI Skin Model -->
+                <div class="project-item ai-project">
+                    <div class="ai-project-header">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>AI Skin Analysis Model</h3>
+                        <p>An AI model that analyzes facial features to detect skin problems like wrinkles, acne, and determines the skin type.</p>
+                        <div class="tech-icons">
+                            <i class="fab fa-python" title="Python"></i>
+                            <i class="fab fa-kickstarter-k" title="Keras"></i> <!-- Using a placeholder 'K' icon for Keras -->
+                        </div>
+                        <a href="https://huggingface.co/kareem2236/my_skin_model" class="project-link" target="_blank" rel="noopener noreferrer">Try it on Hugging Face <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>You can reach me on my social platforms:</p>
+             <div class="social-icons">
+                <a href="https://www.linkedin.com/in/kareem-samer-5665b932b" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Kimo999-dem" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a href="https://huggingface.co/kareem2236" aria-label="Hugging Face" target="_blank" rel="noopener noreferrer"><i class="fas fa-robot"></i></a>
+                <a href="https://www.facebook.com/kareem.samer.50159" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/message/XJVPYKHEWQAHF1" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+             </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>
+                &copy; 2023 Kareem Samir. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</body>
+</html> 
